@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Ensure CFILE variable is set
+if [ -z "$CFILE" ]; then
+  echo "Error: CFILE variable is not set."
+  exit 1
+fi
+
+# Create output file name with .s extension
+output_file="${CFILE%.c}.s"
+
+# Generate assembly code
+gcc -S "$CFILE" -o "$output_file"
