@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Ensure CFILE variable is set
+if [ -z "$CFILE" ]; then
+  echo "Error: CFILE variable is not set."
+  exit 1
+fi
+
+# Run the preprocessor
+gcc -E "$CFILE" -o c
