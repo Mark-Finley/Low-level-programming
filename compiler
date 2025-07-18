@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Ensure CFILE variable is set
+if [ -z "$CFILE" ]; then
+  echo "Error: CFILE variable is not set."
+  exit 1
+fi
+
+# Extract base name without extension
+output_file="${CFILE%.c}.o"
+
+# Compile without linking
+gcc -c "$CFILE" -o "$output_file"
